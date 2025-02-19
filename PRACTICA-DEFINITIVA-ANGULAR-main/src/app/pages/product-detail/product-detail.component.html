@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <div *ngIf="loading" class="text-center">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="!loading" class="d-flex justify-content-center">
+        <mat-card class="example-card">
+            <img mat-card-image [src]="product?.image" [alt]="product?.title">
+            <mat-card-content>
+                <h4>{{product?.price | currency }}</h4>
+                <h5>{{product?.title}}</h5>
+                <p>{{product?.description}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary">Buy Now</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
